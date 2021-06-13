@@ -29,6 +29,59 @@ console.log(epicPhrase2)
 //antes de es6 usabamos \n para separar una linea
 let lorem = "Quiero escribir una frase epica \n" + "otra frase epica que necesitamos"
 
-//
+//es6
+//``template literall comillas francesas
+//Simplemente con dar enter
+let lorem2 = `otra frase epica que necesitamos
+ahora es otra frase epica
+`;
 
+console.log(lorem);
+console.log(lorem2);
+
+//Destruturacción de elementos
+let person = {
+    'name': 'Daniela',
+    'age': 27,
+    'country': 'MX'
+};
+
+//antes de es6
+console.log(person.name, person.age);
+
+//es6
+let { name, age } = person;
+console.log(name, age);
+
+//Spread Operator nos permite expandir de ciertas situaciones varios elementos
+
+//es6
+//nos ayuda a no pasar todos los elementos en una sola línea 
+let team1 = ['Daniela', 'Oscar', 'Ricardo'];
+let team2 = ['Valeria', 'Jessica', 'Camila'];
+
+let education = ['David', ...team1, ...team2];
+
+console.log(education);
+
+// originalmente tenáimos var y esta disponible de forma global
+//let esta disponible solo en el scope, esto significa el bloque de código en el que va a ser llamado
+
+{
+    var globalVar = "Global Var";
+}
+
+{
+    let globalLet = 'Global Let'
+    console.log(globalLet)
+}
+
+console.log(globalVar);
+//console.log(globalLet); aquí no es accesible, tiene que estar adentro del bloque del código en el que ha sido definido
+
+
+//es6 con const no nos deja asignar de nuevo el valor de la variable, eso nos asegura que no se va a mover el valor nunca
+
+const a = 'b';
+a = 'a';
 
