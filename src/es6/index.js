@@ -85,3 +85,64 @@ console.log(globalVar);
 const a = 'b';
 a = 'a';
 
+
+//Caracterisitica que nos permite ahorrar codigo
+let name = 'Daniela';
+let age = 27;
+
+//es5
+obj = { name: name, age: age };
+
+//es6
+obj2 = { name, age };
+console.log(obj2)
+
+//arrow function
+
+const names = [
+    {name: 'Daniela', age: 27},
+    {name: 'Marco', age: 26}
+];
+
+//Si quisiera iterar en cada uno de los elementos utilizaría el método map
+
+//De esta forma estamos pasando una funcion anonima 
+let listOfNames = names.map(function(item){
+    console.log(item.name)
+})
+
+//las arrow fucntion son funciones anónimas
+let listOfNames2 = names.map(item => console.log(item.name));
+
+//también podemos encontrarlas en una constante 
+const listOfNames3 = (name, age) => {
+    console.log(name, age)
+};
+
+//solo usar uno de los elemntos 
+const listOfNames4 = name => {
+    console.log(name)
+};
+
+//utilizar una nueva función, se asigna directamente
+const square = num => num * num;
+
+//promesas
+//Para manejar el asincronismo, han incorporado las promesas que vienen a reparar tambien un problema de los callbacks que era el callback help, en el que necesitabamos ejecutar ciertos llamados en cascada.
+//Promesas que en algun momento va a pasar algo que nosotros estamos estableciendo
+
+const helloPromise = () => {
+    return new Promise((resolve, reject) => {
+        if (true){
+            resolve('Hey!');
+        } else {
+            reject('Ups!!');
+        }
+    });
+};
+
+helloPromise()
+    .then(response => console.log(response));
+    //.then(() => console.log('hola'));
+    .catch(error => console.log(error));
+
