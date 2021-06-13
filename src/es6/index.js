@@ -133,7 +133,7 @@ const square = num => num * num;
 
 const helloPromise = () => {
     return new Promise((resolve, reject) => {
-        if (true){
+        if (false){
             resolve('Hey!');
         } else {
             reject('Ups!!');
@@ -144,5 +144,48 @@ const helloPromise = () => {
 helloPromise()
     .then(response => console.log(response));
     //.then(() => console.log('hola'));
-    .catch(error => console.log(error));
+    //.catch(error => console.log(error));
 
+//CLASES
+//nosotros podemos trabajar mejor con lso objetos y trabajar las herencias
+class calculator {
+    constructor() {
+        this.valueA = 0;
+        this.valueB = 0;
+    }
+    sum(valueA, valueB) {
+        this.valueA = valueA;
+        this.valueB = valueB;
+        return this.valueA + this.valueB
+    }
+}
+
+const calc = new calculator();
+console.log(calc.sum(2, 2));
+
+//IMPORT Y EXPORT (trabajar con módulos)
+//se exporta el modulo de module.js
+//Y ya podemos utilizar hello dentro de mi documento
+
+import { hello } from './module'
+
+hello();
+
+//GENERADORES
+//Primer valor del if
+//Segundo valor
+//Tercer ya no tiene valor
+
+function* helloWorld() {
+    if (true) {
+        yield 'Hello, '
+    }
+    if (true){
+        yield 'world';
+    }
+};
+
+const generatorHello = helloWorld();
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
