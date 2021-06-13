@@ -35,3 +35,30 @@ console.log('food'.padEnd(12, '  ------'))
 const objt = {
     name: 'Daniela',
 }
+
+//Promesta com la cual vamos a trabjar el asyunc y wait esto nos permite ser mas claros a la hota de construir las funciones y va a trabajr de mejor forma el asincronismo
+const helloWorld = () => {
+    return new Promise ((resolve, reject) => {
+        (false)
+        ? setTimeout(() => resolve('Hello World'), 3000)
+        : reject(new Error('Test Error'))
+    })
+}
+
+//va a ahcer el lalamdo va a eperar que suceda y luego imprimir en consola
+const helloAsync = async () => {
+    const hello = await helloWorld();
+    console.log(hello);
+}
+
+helloAsync();
+
+//propuesta para maenajr los errores
+const anotherFunction = async () => {
+    try {
+        const hello = await helloWorld();
+        console.log(hello)
+    } catch (error) {
+        console.log(error)
+    }
+}
